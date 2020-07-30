@@ -11,7 +11,7 @@ public class ControlCpuLoadUtils {
 
     private static ArrayList<Thread> sThreads = new ArrayList<>();
 
-    public static synchronized void start(int numCore, int numThreadsPerCore, long load) {
+    public static synchronized void start(int numCore, int numThreadsPerCore, int load) {
         for (int thread = 0; thread < numCore * numThreadsPerCore; thread++) {
             Thread busyThread = new BusyThread("Thread" + thread, load);
             sThreads.add(busyThread);
